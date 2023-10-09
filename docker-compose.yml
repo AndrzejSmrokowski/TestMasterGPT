@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./backend:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - backend_network
+    depends_on:
+      - php
+
+  mysql:
+    image: mysql:8.0.34
+    env_file:
+      - ./backend/.env
+    volumes:
+      - database_data:/var/lib/mysql:rw
+    ports:
+      - "3306:3306"
+    networks:
+      - backend_network
+    restart: unless-stopped
+    container_name: database
+
+  php:
+    build: ./docker
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/var/www/html
+    networks:
+      - backend_network
+    restart: unless-stopped
+    container_name: php
+
+  node:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    command: npm run serve
+
+volumes:
+  database_data:
+
+networks:
+  backend_network:
+    driver: bridge
