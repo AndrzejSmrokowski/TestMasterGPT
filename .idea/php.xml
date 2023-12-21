@@ -110,6 +110,14 @@
       <path value="$PROJECT_DIR$/backend/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/backend/vendor/sebastian/code-unit-reverse-lookup" />
       <path value="$PROJECT_DIR$/backend/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/backend/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/backend/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/backend/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/gesdinet/jwt-refresh-token-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/validator" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -122,13 +130,17 @@
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
       <interpreter name="docker_php">
-        <phpinfo binary_type="PHP" php_cli="/usr/local/bin/php" path_separator=":" version="8.2.11">
-          <additional_php_ini>/usr/local/etc/php/conf.d/docker-fpm.ini, /usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini, /usr/local/etc/php/conf.d/docker-php-ext-sodium.ini, /usr/local/etc/php/conf.d/docker-php-ext-zip.ini</additional_php_ini>
+        <phpinfo binary_type="PHP" php_cli="/usr/local/bin/php" path_separator=":" version="8.2.12">
+          <additional_php_ini>/usr/local/etc/php/conf.d/docker-fpm.ini, /usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini, /usr/local/etc/php/conf.d/docker-php-ext-sodium.ini, /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini, /usr/local/etc/php/conf.d/docker-php-ext-zip.ini, /usr/local/etc/php/conf.d/xdebug.ini</additional_php_ini>
           <configuration_file />
           <configuration_options>
             <configuration_option name="include_path" value=".:/usr/local/lib/php" />
           </configuration_options>
-          <debuggers />
+          <debuggers>
+            <debugger_info debugger="xdebug" debugger_version="3.2.2">
+              <debug_extensions />
+            </debugger_info>
+          </debuggers>
           <loaded_extensions>
             <extension name="Core" />
             <extension name="PDO" />
@@ -161,6 +173,7 @@
             <extension name="sqlite3" />
             <extension name="standard" />
             <extension name="tokenizer" />
+            <extension name="xdebug" />
             <extension name="xml" />
             <extension name="xmlreader" />
             <extension name="xmlwriter" />
@@ -171,7 +184,7 @@
       </interpreter>
     </phpInfoCache>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
